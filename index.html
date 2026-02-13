@@ -47,51 +47,55 @@
             </fieldset><br>
             <fieldset>
                 <legend>Obiettivo del sito</legend>
-                <label><input type="radio" name="obiettivo" value="vetrina"> Sito vetrina</label><br>
-                <label><input type="radio" name="obiettivo" value="ecommerce"> E-commerce</label><br>
-                <label><input type="radio" name="obiettivo" value="blog"> Blog</label><br>
-                <label><input type="radio" name="obiettivo" value="portfolio"> Portfolio</label><br>
-                <label><input type="radio" name="obiettivo" value="landing"> Landing page</label><br>
-                <label><input type="radio" name="obiettivo" value="booking"> Prenotazioni/Booking</label><br>
-                <label><input type="radio" name="obiettivo" value="altro"> Altro <input type="text" name="obiettivo_altro" placeholder="Specificare"></label>
+                <div class="obiettivo-grid">
+                    <label><input type="radio" name="obiettivo" value="vetrina"> Sito vetrina</label>
+                    <label><input type="radio" name="obiettivo" value="ecommerce"> E-commerce</label>
+                    <label><input type="radio" name="obiettivo" value="blog"> Blog</label>
+                    <label><input type="radio" name="obiettivo" value="portfolio"> Portfolio</label>
+                    <label><input type="radio" name="obiettivo" value="landing"> Landing page</label>
+                    <label><input type="radio" name="obiettivo" value="booking"> Prenotazioni/Booking</label>
+                    <label><input type="radio" name="obiettivo" value="altro"> Altro <input type="text" name="obiettivo_altro" placeholder="Specificare"></label>
+                </div>
             </fieldset><br>
 
-            <fieldset>
-                <legend>Target di pubblico</legend>
-                <label><input type="checkbox" name="target" value="aziende"> Aziende</label>
-                <label><input type="checkbox" name="target" value="privati"> Privati</label>
-                <label><input type="checkbox" name="target" value="giovani"> Giovani</label>
-                <label><input type="checkbox" name="target" value="professionisti"> Professionisti</label>
-                <label><input type="checkbox" name="target" value="altro"> Altro <input type="text" name="target_altro" placeholder="Specificare"></label>
-            </fieldset><br>
+            <div class="fieldset-flex">
+                <fieldset>
+                    <legend>Target di pubblico</legend>
+                    <label><input type="checkbox" name="target" value="aziende"> Aziende</label>
+                    <label><input type="checkbox" name="target" value="privati"> Privati</label>
+                    <label><input type="checkbox" name="target" value="giovani"> Giovani</label>
+                    <label><input type="checkbox" name="target" value="professionisti"> Professionisti</label>
+                    <label><input type="checkbox" name="target" value="altro"> Altro <input type="text" name="target_altro" placeholder="Specificare"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Lingue desiderate</legend>
+                    <label><input type="checkbox" name="lingue" value="it" checked> Italiano</label>
+                    <label><input type="checkbox" name="lingue" value="en"> Inglese</label>
+                    <label><input type="checkbox" name="lingue" value="fr"> Francese</label>
+                    <label><input type="checkbox" name="lingue" value="de"> Tedesco</label>
+                    <label><input type="checkbox" name="lingue" value="altro"> Altro <input type="text" name="lingue_altro" placeholder="Specificare"></label>
+                </fieldset>
+            </div><br>
 
-            <fieldset>
-                <legend>Lingue desiderate</legend>
-                <label><input type="checkbox" name="lingue" value="it" checked> Italiano</label>
-                <label><input type="checkbox" name="lingue" value="en"> Inglese</label>
-                <label><input type="checkbox" name="lingue" value="fr"> Francese</label>
-                <label><input type="checkbox" name="lingue" value="de"> Tedesco</label>
-                <label><input type="checkbox" name="lingue" value="altro"> Altro <input type="text" name="lingue_altro" placeholder="Specificare"></label>
-            </fieldset><br>
-
-            <fieldset>
-                <legend>Scegli le pagine principali del sito</legend>
-                <label><input type="checkbox" name="pagine_principali" value="home"> Home (pagina iniziale)</label><br>
-                <label><input type="checkbox" name="pagine_principali" value="chi_siamo"> Chi siamo</label><br>
-                <label><input type="checkbox" name="pagine_principali" value="servizi"> Servizi</label><br>
-                <label><input type="checkbox" name="pagine_principali" value="contatti"> Contatti</label><br>
-                <label><input type="checkbox" name="pagine_principali" value="faq"> FAQ (domande frequenti)</label><br>
-            </fieldset><br>
-
-            <fieldset>
-                <legend>Funzionalità extra</legend>
-                <label><input type="checkbox" name="funzionalita" value="newsletter"> Newsletter</label>
-                <label><input type="checkbox" name="funzionalita" value="chat"> Chat</label>
-                <label><input type="checkbox" name="funzionalita" value="area_riservata"> Area riservata</label>
-                <label><input type="checkbox" name="funzionalita" value="booking"> Booking/prenotazioni</label>
-                <label><input type="checkbox" name="funzionalita" value="download"> Download documenti</label>
-                <label><input type="checkbox" name="funzionalita" value="altro"> Altro <input type="text" name="funzionalita_altro" placeholder="Specificare"></label>
-            </fieldset><br>
+            <div class="fieldset-flex">
+                <fieldset>
+                    <legend>Scegli le pagine principali del sito</legend>
+                    <label><input type="checkbox" name="pagine_principali" value="home"> Home (pagina iniziale)</label><br>
+                    <label><input type="checkbox" name="pagine_principali" value="chi_siamo"> Chi siamo</label><br>
+                    <label><input type="checkbox" name="pagine_principali" value="servizi"> Servizi</label><br>
+                    <label><input type="checkbox" name="pagine_principali" value="contatti"> Contatti</label><br>
+                    <label><input type="checkbox" name="pagine_principali" value="faq"> FAQ (domande frequenti)</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Funzionalità extra</legend>
+                    <label><input type="checkbox" name="funzionalita" value="newsletter"> Newsletter</label>
+                    <label><input type="checkbox" name="funzionalita" value="chat"> Chat</label>
+                    <label><input type="checkbox" name="funzionalita" value="area_riservata"> Area riservata</label>
+                    <label><input type="checkbox" name="funzionalita" value="booking"> Booking/prenotazioni</label>
+                    <label><input type="checkbox" name="funzionalita" value="download"> Download documenti</label>
+                    <label><input type="checkbox" name="funzionalita" value="altro"> Altro <input type="text" name="funzionalita_altro" placeholder="Specificare"></label>
+                </fieldset>
+            </div><br>
 
             <fieldset>
                 <legend>Integrazioni</legend>
