@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riepilogo Preventivo</title>
+    <link rel="stylesheet" href="../css/preventivo_riepilogo.css">
+</head>
+<body>
+    <div class="container">
+                <div class="logo-container" style="text-align:center; margin-bottom: 20px;">
+                    <img src="../assets/images/logo/Logo White.png" alt="Logo Dwebcoding" style="max-width: 200px; height: auto;">
+                </div>
+        <div id="riepilogo"></div>
+        <fieldset>
+            <legend>Dettaglio servizi e costi</legend>
+            <div id="riepilogo-servizi"></div>
+        </fieldset>
+        <form>
+            <fieldset>
+                <legend>Condizioni di pagamento</legend>
+                <label><input type="checkbox" name="pagamento" value="acconto"> Acconto all'accettazione</label>
+                <label><input type="checkbox" name="pagamento" value="saldo"> Saldo a consegna</label>
+                <label><input type="checkbox" name="pagamento" value="rate"> Pagamento rateale</label>
+                <label><input type="checkbox" name="pagamento" value="altro"> Altro <input type="text" name="pagamento_altro" placeholder="Specificare"></label>
+            </fieldset>
+            <fieldset>
+                <legend>Validità del preventivo</legend>
+                <label>Il preventivo è valido fino al: <input type="date" name="validita_preventivo" required></label>
+            </fieldset>
+            <fieldset>
+                <legend>Privacy e GDPR</legend>
+                <label><input type="checkbox" name="privacy" required> Acconsento al trattamento dei dati personali secondo la normativa vigente (GDPR).</label>
+            </fieldset>
+            <fieldset>
+                <legend>Termini e condizioni</legend>
+                <label><input type="checkbox" name="termini" required> Ho letto e accetto i <a href="#" target="_blank">termini e condizioni</a> allegati.</label>
+            </fieldset>
+            <fieldset>
+                <legend>Firma del cliente</legend>
+                <label>Firma digitale (scrivi il tuo nome e cognome):<br>
+                    <input type="text" name="firma_cliente" required placeholder="Nome e Cognome">
+                </label>
+            </fieldset>
+        </form>
+        <div id="risultato"></div>
+        <button onclick="window.print()">Stampa</button>
+        <button onclick="window.location.href='../index.html'">Torna al modulo</button>
+    </div>
+    <script src="../js/preventivo_riepilogo.js"></script>
+</body>
+</html>

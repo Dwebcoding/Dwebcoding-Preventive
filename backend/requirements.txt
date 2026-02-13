@@ -1,0 +1,3 @@
+# requirements.txt
+Flask
+# Aggiungi qui altre dipendenze necessarie per il backend

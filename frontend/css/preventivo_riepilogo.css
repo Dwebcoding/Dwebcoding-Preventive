@@ -1,0 +1,423 @@
+.dettaglio-servizi-card .card-icon svg,
+.voce-icon-minimal svg {
+    stroke: #111 !important;
+    fill: none !important;
+}
+/* Card: mostra dettagli voci su hover/focus */
+.card-desc-list {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.card-details {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 120%;
+    background: rgba(24,28,31,0.92);
+    color: #fff;
+    border-radius: 14px;
+    border: 1.5px solid #19c37d;
+    box-shadow: 0 6px 32px 0 rgba(25,195,125,0.13), 0 1.5px 8px #111a;
+    padding: 18px 26px 16px 22px;
+    min-width: 200px;
+    z-index: 20;
+    font-size: 1.04em;
+    white-space: pre-line;
+    backdrop-filter: blur(4px);
+    transition: opacity 0.22s cubic-bezier(.4,1.4,.6,1), transform 0.22s cubic-bezier(.4,1.4,.6,1);
+    transform: translateY(10px) scale(0.98);
+    box-sizing: border-box;
+}
+.card-details::before {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 22px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 13px solid #19c37d;
+    filter: drop-shadow(0 2px 4px #111a);
+}
+.card-hover-group:hover .card-details,
+.card-hover-group:focus .card-details {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    z-index: 20;
+}
+/* CSS specifico per preventivo_riepilogo.html */
+
+
+/* --- Regole base per coerenza grafica con index.html --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Raleway:wght@500;700&display=swap');
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181c1f;
+    margin: 0;
+    padding: 0;
+    color: #e6e6e6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 200px auto;
+    background: #23272b;
+    padding: 32px 20px 24px 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.281);
+    border: 1.5px solid #1bff6a33;
+}
+
+h1 {
+    text-align: center;
+    color: #1bff6a;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+}
+
+fieldset {
+    border: 5.5px solid #1bff6a33;
+    border-radius: 8px;
+    background: #23272b;
+    margin-bottom: 18px;
+    padding: 16px 14px 10px 14px;
+    box-shadow: 0 1px 4px #0fa95811;
+}
+
+legend {
+    color: #1bff6a;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 1.08em;
+    padding: 0 8px;
+}
+
+button {
+    padding: 10px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.08em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px #1bff6a22;
+    background: linear-gradient(90deg, #0fa958 0%, #0b8c4a 100%);
+    color: #181c1f;
+    border: none;
+    font-family: 'Montserrat', 'Raleway', 'Segoe UI', Arial, sans-serif;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0b8c4a 0%, #0fa958 100%);
+    color: #181c1f;
+}
+
+input,
+select,
+textarea {
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    border: 1.5px solid #181c1f;
+    border-radius: 7px;
+    background: #181c1f;
+    color: #e6e6e6;
+    padding: 10px 12px;
+    font-size: 1em;
+    margin-top: 7px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px #0fa95811;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #b0b0b0;
+    opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border: 1.5px solid #1bff6a;
+    box-shadow: 0 0 0 2px #1bff6a33;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #1bff6a;
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Tabella stile coerente */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    background: #23272b;
+    color: #e6e6e6;
+    font-size: 1em;
+}
+th, td {
+    border: 1px solid #1bff6a33;
+    padding: 8px 6px;
+    text-align: left;
+}
+th {
+    background: #181c1f;
+    color: #1bff6a;
+    font-weight: 600;
+}
+tr:nth-child(even) {
+    background: #23272b;
+}
+tr:nth-child(odd) {
+    background: #181c1f;
+}
+
+@media (max-width: 700px) {
+    .container {
+        margin: 24px 2px;
+        padding: 10px 2px 10px 2px;
+    }
+    table, th, td {
+        font-size: 0.98em;
+        padding: 4px 2px;
+    }
+    button {
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #181c1f;
+    margin: 0;
+    padding: 0;
+    color: #e6e6e6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 80px auto;
+    background: #23272b;
+    padding: 32px 20px 24px 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.281);
+    border: 1.5px solid #1bff6a33;
+}
+
+h1 {
+    text-align: center;
+    color: #1bff6a;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+}
+
+/* Aggiungi qui altre regole specifiche per preventivo_riepilogo.html se necessario */
+
+/* --- Dettaglio servizi e costi: stile cards --- */
+.dettaglio-servizi-section {
+    margin-top: 32px;
+}
+.dettaglio-servizi-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 18px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: visible;
+}
+
+.dettaglio-servizi-card {
+    background: linear-gradient(180deg, rgba(25,195,125,0.92) 0%, rgba(25,195,125,0.92) 50%, rgba(17,17,17,0.92) 100%);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(25,195,125,0.13), 0 2px 16px #111a;
+    border: 1.5px solid rgba(25,195,125,0.55);
+    padding: 28px 30px 22px 30px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.28s cubic-bezier(.4,1.4,.6,1), border-color 0.22s, transform 0.22s cubic-bezier(.4,1.4,.6,1);
+    color: #fff;
+    backdrop-filter: blur(4px);
+    position: relative;
+    /* overflow: visible;  Consente alle tendine di uscire */
+}
+.dettaglio-servizi-card:hover {
+    box-shadow: 0 12px 38px 0 rgba(25,195,125,0.22), 0 4px 24px #111a;
+    border-color: #229e6b;
+    transform: translateY(-6px) scale(1.025);
+}
+.dettaglio-servizi-card .card-icon {
+    display: block;
+    margin-bottom: 12px;
+    width: 32px;
+    height: 32px;
+    min-width: 28px;
+    min-height: 28px;
+    max-width: 36px;
+    max-height: 36px;
+}
+.dettaglio-servizi-card .card-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #041810 !important;
+    fill: none !important;
+    display: block;
+}
+.dettaglio-servizi-card .card-title {
+    font-weight: 800;
+    font-size: 1.13em;
+    margin-bottom: 6px;
+    color: #fff;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 8px #111a;
+}
+.dettaglio-servizi-card .card-desc {
+    color: #eafff2;
+    font-size: 1.04em;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.dettaglio-servizi-card .card-price {
+    margin-top: 10px;
+    font-weight: 700;
+    color: #19c37d;
+    font-size: 1.13em;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 8px #111a;
+}
+
+/* Riga icone+testo per ogni voce nella card */
+.voci-icons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-bottom: 8px;
+    margin-top: 2px;
+    justify-content: flex-start;
+}
+.voce-icon {
+    display: flex;
+    align-items: center;
+    background: rgba(24,28,31,0.18);
+    border-radius: 8px;
+    padding: 3px 10px 3px 6px;
+    font-size: 1.01em;
+    color: #fff;
+    box-shadow: 0 1px 4px #1112;
+    transition: background 0.18s;
+}
+.voce-icon span:first-child {
+    font-size: 1.18em;
+    margin-right: 6px;
+    filter: drop-shadow(0 0 2px #19c37d);
+}
+.voce-testo {
+    font-size: 0.99em;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 700px) {
+    .dettaglio-servizi-cards {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .dettaglio-servizi-card {
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Tendina dettagli: z-index molto alto, ombra più ampia, blur maggiore */
+.card-details {
+    z-index: 100;
+    box-shadow: 0 12px 48px 0 rgba(25,195,125,0.18), 0 2px 16px #111a;
+    backdrop-filter: blur(6px);
+}
+
+/* Minimal icons row */
+.voci-icons-row-minimal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-bottom: 8px;
+    margin-top: 2px;
+    justify-content: flex-start;
+}
+.voce-icon-minimal {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #fff;
+    gap: 4px;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+}
+.voce-icon-minimal svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 1.15em;
+    height: 1.15em;
+    min-width: 14px;
+    min-height: 14px;
+    max-width: 18px;
+    max-height: 18px;
+    stroke: #19c37d !important;
+    fill: none !important;
+}
+.voce-testo-minimal {
+    font-size: 0.97em;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: #eafff2;
+}
+
+/* Minimal details node */
+.card-desc-list-minimal { position: relative; cursor: pointer; outline: none; }
+.card-details-minimal {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 120%;
+    background: none;
+    color: #eafff2;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    min-width: 180px;
+    z-index: 100;
+    font-size: 0.99em;
+    white-space: pre-line;
+    backdrop-filter: none;
+    transition: opacity 0.18s, transform 0.18s;
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+}
+.card-hover-group:hover .card-details-minimal,
+.card-hover-group:focus .card-details-minimal {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}

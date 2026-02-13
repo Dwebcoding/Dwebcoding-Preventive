@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventivo Web Dev</title>
+    <link rel="stylesheet" href="frontend/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container" style="text-align:center; margin-bottom: 20px;">
+            <img src="frontend/assets/images/logo/Logo White.png" alt="Logo Dwebcoding" style="max-width: 200px; height: auto;">
+        </div>
+        <h1>"Simula il Preventivo per il Tuo Sito Web"</h1>
+        <form id="preventivoForm">
+            <fieldset>
+                <legend>Dati cliente</legend>
+                <div class="cliente-grid">
+                    <div class="cliente-row-grid">
+                        <label>Nome e Cognome:<br>
+                            <input type="text" name="nome" required>
+                        </label>
+                        <label>Email:<br>
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>Città:<br>
+                            <input type="text" name="citta" placeholder="Città">
+                        </label>
+                    </div>
+                    <div class="cliente-row-grid">
+                        <label>Azienda:<br>
+                            <input type="text" name="azienda" placeholder="(opzionale)">
+                        </label>
+                        <label>Telefono:<br>
+                            <input type="tel" name="telefono" pattern="[0-9 \+\(\)\-]{6,20}" placeholder="Esempio: +39 333 1234567">
+                        </label>
+                        <label>Indirizzo:<br>
+                            <input type="text" name="indirizzo" placeholder="Via, numero civico">
+                        </label>
+                    </div>
+                    <div class="cliente-row-grid">
+                        <label>Partita IVA / Codice Fiscale:<br>
+                            <input type="text" name="piva_cf" placeholder="(opzionale)">
+                        </label>
+                    </div>
+                </div>
+            </fieldset><br>
+            <fieldset>
+                <legend>Obiettivo del sito</legend>
+                <label><input type="radio" name="obiettivo" value="vetrina"> Sito vetrina</label><br>
+                <label><input type="radio" name="obiettivo" value="ecommerce"> E-commerce</label><br>
+                <label><input type="radio" name="obiettivo" value="blog"> Blog</label><br>
+                <label><input type="radio" name="obiettivo" value="portfolio"> Portfolio</label><br>
+                <label><input type="radio" name="obiettivo" value="landing"> Landing page</label><br>
+                <label><input type="radio" name="obiettivo" value="booking"> Prenotazioni/Booking</label><br>
+                <label><input type="radio" name="obiettivo" value="altro"> Altro <input type="text" name="obiettivo_altro" placeholder="Specificare"></label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Target di pubblico</legend>
+                <label><input type="checkbox" name="target" value="aziende"> Aziende</label>
+                <label><input type="checkbox" name="target" value="privati"> Privati</label>
+                <label><input type="checkbox" name="target" value="giovani"> Giovani</label>
+                <label><input type="checkbox" name="target" value="professionisti"> Professionisti</label>
+                <label><input type="checkbox" name="target" value="altro"> Altro <input type="text" name="target_altro" placeholder="Specificare"></label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Lingue desiderate</legend>
+                <label><input type="checkbox" name="lingue" value="it" checked> Italiano</label>
+                <label><input type="checkbox" name="lingue" value="en"> Inglese</label>
+                <label><input type="checkbox" name="lingue" value="fr"> Francese</label>
+                <label><input type="checkbox" name="lingue" value="de"> Tedesco</label>
+                <label><input type="checkbox" name="lingue" value="altro"> Altro <input type="text" name="lingue_altro" placeholder="Specificare"></label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Scegli le pagine principali del sito</legend>
+                <label><input type="checkbox" name="pagine_principali" value="home"> Home (pagina iniziale)</label><br>
+                <label><input type="checkbox" name="pagine_principali" value="chi_siamo"> Chi siamo</label><br>
+                <label><input type="checkbox" name="pagine_principali" value="servizi"> Servizi</label><br>
+                <label><input type="checkbox" name="pagine_principali" value="contatti"> Contatti</label><br>
+                <label><input type="checkbox" name="pagine_principali" value="faq"> FAQ (domande frequenti)</label><br>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Funzionalità extra</legend>
+                <label><input type="checkbox" name="funzionalita" value="newsletter"> Newsletter</label>
+                <label><input type="checkbox" name="funzionalita" value="chat"> Chat</label>
+                <label><input type="checkbox" name="funzionalita" value="area_riservata"> Area riservata</label>
+                <label><input type="checkbox" name="funzionalita" value="booking"> Booking/prenotazioni</label>
+                <label><input type="checkbox" name="funzionalita" value="download"> Download documenti</label>
+                <label><input type="checkbox" name="funzionalita" value="altro"> Altro <input type="text" name="funzionalita_altro" placeholder="Specificare"></label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Integrazioni</legend>
+                <label><input type="checkbox" name="integrazioni" value="pagamenti"> Pagamenti online</label>
+                <label><input type="checkbox" name="integrazioni" value="social"> Social network</label>
+                <label><input type="checkbox" name="integrazioni" value="maps"> Google Maps</label>
+                <label><input type="checkbox" name="integrazioni" value="crm"> CRM</label>
+                <label><input type="checkbox" name="integrazioni" value="altro"> Altro <input type="text" name="integrazioni_altro" placeholder="Specificare"></label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Design e preferenze grafiche</legend>
+                <label><input type="checkbox" name="design" value="moderno"> Stile moderno</label>
+                <label><input type="checkbox" name="design" value="classico"> Stile classico</label>
+                <label><input type="checkbox" name="design" value="colori"> Preferenze colori <input type="text" name="colori_preferiti" placeholder="Es: blu, bianco..."></label>
+                <label><input type="checkbox" name="design" value="logo"> Ho già un logo</label>
+                <label><input type="checkbox" name="design" value="altro"> Altro <input type="text" name="design_altro" placeholder="Specificare"></label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Accessibilità e mobilità</legend>
+                <label><input type="checkbox" name="accessibilita" value="responsive"> Responsive/mobile</label>
+                <label><input type="checkbox" name="accessibilita" value="disabili"> Accessibile per disabili</label>
+                <label><input type="checkbox" name="accessibilita" value="altro"> Altro <input type="text" name="accessibilita_altro" placeholder="Specificare"></label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>SEO e marketing</legend>
+                <label><input type="checkbox" name="seo" value="ottimizzazione"> Ottimizzazione motori di ricerca</label>
+                <label><input type="checkbox" name="seo" value="analytics"> Google Analytics</label>
+                <label><input type="checkbox" name="seo" value="altro"> Altro <input type="text" name="seo_altro" placeholder="Specificare"></label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Tempistiche desiderate</legend>
+                <label><input type="radio" name="tempistiche" value="urgente"> Urgente</label>
+                <label><input type="radio" name="tempistiche" value="1mese"> Entro 1 mese</label>
+                <label><input type="radio" name="tempistiche" value="3mesi"> Entro 3 mesi</label>
+                <label><input type="radio" name="tempistiche" value="nessuna"> Nessuna preferenza</label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Budget indicativo</legend>
+                <label><input type="radio" name="budget" value="<1000"> &lt; 1.000€</label>
+                <label><input type="radio" name="budget" value="1000-3000"> 1.000€ - 3.000€</label>
+                <label><input type="radio" name="budget" value="3000-6000"> 3.000€ - 6.000€</label>
+                <label><input type="radio" name="budget" value=">6000"> &gt; 6.000€</label>
+                <label><input type="radio" name="budget" value="non_so"> Non so / da valutare</label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Assistenza e manutenzione</legend>
+                <label><input type="checkbox" name="assistenza" value="si"> Sì, desidero assistenza/manutenzione</label>
+                <label><input type="checkbox" name="assistenza" value="no"> No, non serve</label>
+                <label><input type="checkbox" name="assistenza" value="altro"> Altro <input type="text" name="assistenza_altro" placeholder="Specificare"></label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Note aggiuntive</legend>
+                <textarea name="note_aggiuntive" rows="3" maxlength="350" style="resize:none;width:98%;min-width:220px;max-width:100%;" placeholder="Scrivi qui altre informazioni utili o richieste particolari... (max 350 caratteri)"></textarea>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Pagine extra e richieste particolari</legend>
+                <label><input type="checkbox" name="pagine_extra" value="blog"> Blog</label><br>
+                <label><input type="checkbox" name="pagine_extra" value="area_riservata"> Area riservata</label><br>
+                <label><input type="checkbox" name="pagine_extra" value="shop"> E-commerce/Shop</label><br>
+                <label><input type="checkbox" name="pagine_extra" value="altro"> Altro</label><br>
+                <textarea name="dettagli_extra" rows="3" maxlength="350" style="resize:none;width:98%;min-width:320px;max-width:100%;" placeholder="Scrivi qui le tue richieste particolari, pagine extra o funzionalità specifiche... (max 350 caratteri)"></textarea>
+            </fieldset><br>
+            <fieldset>
+                <legend>Modalità preventivo</legend>
+                <label><input type="radio" name="modalita" value="pdf" required> PDF stampabile</label><br>
+                <label><input type="radio" name="modalita" value="digitale"> Preventivo digitale con firma</label>
+            </fieldset><br>
+            <button type="submit">Genera Preventivo</button>
+   
+        </form>
+        <div id="risultato"></div>
+        <div id="lista_tecnologie_finale" style="margin-top:30px; background:#f7f7f7; padding:12px; border-radius:6px;"></div>
+    </div>
+    <script src="frontend/js/preventivo.js"></script>
+    <script>
+    // Funzione per aggiungere una riga alla tabella dei servizi
+    function aggiungiRigaServizio() {
+        const tbody = document.getElementById('serviziTableBody');
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><input type="text" name="servizio[]" placeholder="Es: Pagina web" required></td>
+            <td><input type="number" name="quantita[]" min="1" value="1" required></td>
+            <td><input type="number" name="prezzo_unitario[]" min="0" step="0.01" required></td>
+            <td><input type="number" name="totale[]" min="0" step="0.01" readonly></td>
+        `;
+        tbody.appendChild(tr);
+        aggiornaTotali();
+        // Aggiorna i listener
+        aggiornaListenerInput();
+    }
+
+    // Calcolo automatico dei totali
+    function aggiornaTotali() {
+        const quantita = document.getElementsByName('quantita[]');
+        const prezzo = document.getElementsByName('prezzo_unitario[]');
+        const totali = document.getElementsByName('totale[]');
+        let somma = 0;
+        for (let i = 0; i < quantita.length; i++) {
+            const q = parseFloat(quantita[i].value) || 0;
+            const p = parseFloat(prezzo[i].value) || 0;
+            const t = q * p;
+            totali[i].value = t.toFixed(2);
+            somma += t;
+        }
+        document.getElementById('totalePreventivo').textContent = somma.toFixed(2);
+    }
+
+    function aggiornaListenerInput() {
+        const quantita = document.getElementsByName('quantita[]');
+        const prezzo = document.getElementsByName('prezzo_unitario[]');
+        for (let i = 0; i < quantita.length; i++) {
+            quantita[i].oninput = aggiornaTotali;
+            prezzo[i].oninput = aggiornaTotali;
+        }
+    }
+    aggiornaListenerInput();
+    </script>
+</body>
+</html>
