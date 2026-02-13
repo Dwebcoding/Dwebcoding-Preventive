@@ -141,6 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
             tecnologie
         }));
         // Vai alla pagina di riepilogo
-        window.location.href = 'preventivo_riepilogo.html';
+        window.location.href = '/frontend/html/preventivo_riepilogo.html';
     });
 });
