@@ -247,8 +247,15 @@ window.onload = function() {
             return;
         }
         document.getElementById('risultato').innerHTML = 'Invio in corso...';
+        // Determina l'endpoint API corretto
+        let apiUrl = '';
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            apiUrl = 'http://localhost:5000/api/accetta-preventivo';
+        } else {
+            apiUrl = 'https://dwebcoding-preventive.vercel.app/api/accetta-preventivo';
+        }
         try {
-            const res = await fetch('https://dwebcoding-preventive.vercel.app/api/accetta-preventivo', {
+            const res = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dati)
