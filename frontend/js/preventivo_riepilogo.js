@@ -248,7 +248,7 @@ window.onload = function() {
         }
         document.getElementById('risultato').innerHTML = 'Invio in corso...';
         try {
-            const res = await fetch('http://localhost:5000/api/accetta-preventivo', {
+            const res = await fetch('https://dwebcoding-preventive.vercel.app/api/accetta-preventivo', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dati)
