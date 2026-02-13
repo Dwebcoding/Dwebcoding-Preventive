@@ -9,7 +9,12 @@ from email.mime.multipart import MIMEMultipart
 import re
 
 app = Flask(__name__)
-CORS(app, origins=["https://dwebcoding.github.io", "http://localhost:5000"])
+CORS(app, origins=[
+    "https://dwebcoding.github.io",
+    "https://dwebcoding-preventive.vercel.app",
+    "https://dwebcoding.github.io/Portfolio",
+    "http://localhost:5000"
+], supports_credentials=True)
 
 
 @app.route('/api/preventivo', methods=['POST'])
