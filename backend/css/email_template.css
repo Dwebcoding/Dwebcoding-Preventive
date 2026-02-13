@@ -1,0 +1,35 @@
+body {
+    background: #181c1f;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #e6e6e6;
+    margin: 0;
+    padding: 0;
+}
+.email-container {
+    background: #23272b;
+    max-width: 480px;
+    margin: 48px auto;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.28);
+    padding: 32px 24px 24px 24px;
+    border: 1.5px solid #1bff6a33;
+}
+h2 {
+    color: #1bff6a;
+    font-family: 'Montserrat', 'Raleway', 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 18px;
+    text-align: center;
+}
+ul {
+    padding-left: 20px;
+    margin: 0 0 10px 0;
+}
+.firma {
+    color: #888;
+    font-size: 0.95em;
+    margin-top: 32px;
+    text-align: center;
+}

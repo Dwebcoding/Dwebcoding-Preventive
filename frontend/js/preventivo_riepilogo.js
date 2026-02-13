@@ -224,4 +224,44 @@ window.onload = function() {
         sezioniMostrate.add('firma');
     }
     document.getElementById('riepilogo').innerHTML = html;
+
+    // Logica accettazione preventivo
+    document.getElementById('accetta-preventivo-btn').onclick = async function() {
+        // Recupera dati riepilogo e dati form
+        const datiRiepilogo = JSON.parse(localStorage.getItem('riepilogoPreventivo')) || {};
+        const form = document.querySelector('form');
+        const formData = new FormData(form);
+        // Costruisci oggetto dati da inviare
+        const dati = {
+            ...datiRiepilogo,
+            pagamento: formData.getAll('pagamento'),
+            pagamento_altro: formData.get('pagamento_altro'),
+            validita_preventivo: formData.get('validita_preventivo'),
+            privacy: formData.get('privacy'),
+            termini: formData.get('termini'),
+            firma_cliente: formData.get('firma_cliente')
+        };
+        // Validazione minima
+        if (!dati.privacy || !dati.termini || !dati.firma_cliente) {
+            document.getElementById('risultato').innerHTML = '<span style="color:red">Devi accettare privacy, termini e firmare.</span>';
+            return;
+        }
+        document.getElementById('risultato').innerHTML = 'Invio in corso...';
+        try {
+            const res = await fetch('http://localhost:5000/api/accetta-preventivo', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dati)
+            });
+            const json = await res.json();
+            if (json.success) {
+                document.getElementById('risultato').innerHTML = '<span style="color:green;font-weight:600;">Preventivo inviato con successo! Riceverai una mail di conferma a breve.</span>';
+                document.getElementById('accetta-preventivo-btn').disabled = true;
+            } else {
+                document.getElementById('risultato').innerHTML = '<span style="color:red">'+json.message+'</span>';
+            }
+        } catch (e) {
+            document.getElementById('risultato').innerHTML = '<span style="color:red">Errore di rete: '+e+'</span>';
+        }
+    };
 };

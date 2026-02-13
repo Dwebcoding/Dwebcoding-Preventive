@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Conferma Accettazione Preventivo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Raleway:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+    /* Verrà sostituito inline dal backend */
+    </style>
+</head>
+<body style="background:#181c1f;margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;color:#e6e6e6;">
+    <div class="email-container" style="max-width:480px;margin:48px auto;background:#23272b;padding:32px 24px 24px 24px;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,0.28);border:1.5px solid #1bff6a33;">
+        <div class="logo" style="text-align:center;margin-bottom:24px;">
+            <img src="cid:logo" alt="Logo Dwebcoding" style="max-width:160px;filter:drop-shadow(0 2px 8px #1bff6a33);">
+        </div>
+        <h2 style="color:#1bff6a;font-family:'Montserrat','Raleway','Segoe UI',Arial,sans-serif;font-weight:700;letter-spacing:1px;margin-top:0;margin-bottom:18px;text-align:center;">Grazie per aver accettato il preventivo!</h2>
+        <div style="background:#181c1f;border-radius:8px;padding:18px 16px 12px 16px;border:1.5px solid #0fa95844;margin-bottom:18px;">
+            <p style="margin:0 0 10px 0;">Ciao <strong style="color:#1bff6a;">{{nome}}</strong>,</p>
+            <p style="margin:0 0 10px 0;">Abbiamo ricevuto la tua conferma.<br>Ecco il riepilogo completo del tuo preventivo:</p>
+            <table style="width:100%;border-collapse:collapse;background:#23272b;color:#e6e6e6;font-size:1em;margin-bottom:12px;">
+                <thead>
+                    <tr>
+                        <th style="background:#181c1f;color:#1bff6a;font-weight:600;padding:8px 6px;border:1px solid #1bff6a33;">Sezione</th>
+                        <th style="background:#181c1f;color:#1bff6a;font-weight:600;padding:8px 6px;border:1px solid #1bff6a33;">Voce</th>
+                        <th style="background:#181c1f;color:#1bff6a;font-weight:600;padding:8px 6px;border:1px solid #1bff6a33;">Prezzo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{riepilogo_servizi}}
+                </tbody>
+            </table>
+            <div style="text-align:right;margin-top:8px;font-size:1.13em;"><strong>Prezzo finale: {{prezzo_finale}} €</strong></div>
+            <div style="margin-top:18px;">
+                <strong style="color:#0fa958;">Dettagli tecnici:</strong>
+                <ul style="margin:6px 0 0 0;padding-left:18px;">
+                    <li><strong>Tecnologie frontend:</strong> {{tecnologie_frontend}}</li>
+                    <li><strong>Tecnologie backend:</strong> {{tecnologie_backend}}</li>
+                    <li><strong>Target:</strong> {{target}}</li>
+                    <li><strong>Tempistiche:</strong> {{tempistiche}}</li>
+                    <li><strong>Budget:</strong> {{budget}}</li>
+                </ul>
+            </div>
+            <div style="margin-top:18px;">
+                <strong style="color:#0fa958;">Condizioni di pagamento:</strong> <span>{{condizioni_pagamento}}</span><br>
+                <strong style="color:#0fa958;">Validità preventivo:</strong> <span>{{validita_preventivo}}</span>
+            </div>
+            <div style="margin-top:18px;">
+                <strong style="color:#0fa958;">Firma cliente:</strong> <span>{{firma_cliente}}</span>
+            </div>
+        </div>
+        <p style="margin-top:18px;margin-bottom:0;text-align:center;">Ti ricontatteremo a breve per i prossimi passi.<br>Grazie per la fiducia!</p>
+        <div class="firma" style="margin-top:32px;font-size:0.95em;color:#888;text-align:center;">Dwebcoding Team</div>
+    </div>
+</body>
+</html>
