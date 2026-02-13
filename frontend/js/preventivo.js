@@ -53,10 +53,92 @@ document.addEventListener('DOMContentLoaded', function() {
         </ul>`;
     }
 
+
+    // Mappatura obiettivo -> checkbox da selezionare
+    const checkboxPerObiettivo = {
+        ecommerce: {
+            pagine_principali: ['home', 'servizi', 'contatti', 'faq'],
+            pagine_extra: ['shop'],
+            funzionalita: ['newsletter', 'chat', 'area_riservata'],
+            integrazioni: ['pagamenti', 'social'],
+            design: ['moderno', 'logo'],
+            accessibilita: ['responsive'],
+            seo: ['ottimizzazione', 'analytics']
+        },
+        landing: {
+            pagine_principali: ['home'],
+            pagine_extra: [],
+            funzionalita: ['newsletter'],
+            integrazioni: ['social'],
+            design: ['moderno'],
+            accessibilita: ['responsive'],
+            seo: ['ottimizzazione']
+        },
+        vetrina: {
+            pagine_principali: ['home', 'chi_siamo', 'servizi', 'contatti'],
+            pagine_extra: [],
+            funzionalita: [],
+            integrazioni: ['social'],
+            design: ['moderno', 'logo'],
+            accessibilita: ['responsive'],
+            seo: ['ottimizzazione']
+        },
+        blog: {
+            pagine_principali: ['home', 'chi_siamo', 'contatti'],
+            pagine_extra: ['blog'],
+            funzionalita: ['newsletter'],
+            integrazioni: ['social'],
+            design: ['moderno'],
+            accessibilita: ['responsive'],
+            seo: ['ottimizzazione', 'analytics']
+        },
+        portfolio: {
+            pagine_principali: ['home', 'chi_siamo', 'contatti'],
+            pagine_extra: [],
+            funzionalita: [],
+            integrazioni: ['social'],
+            design: ['moderno', 'logo'],
+            accessibilita: ['responsive'],
+            seo: ['ottimizzazione']
+        },
+        booking: {
+            pagine_principali: ['home', 'servizi', 'contatti'],
+            pagine_extra: [],
+            funzionalita: ['booking'],
+            integrazioni: ['pagamenti'],
+            design: ['moderno', 'logo'],
+            accessibilita: ['responsive'],
+            seo: ['ottimizzazione']
+        }
+    };
+
+    function aggiornaCheckboxObiettivo() {
+        // Svuota tutte le checkbox
+        form.querySelectorAll('input[type="checkbox"]').forEach(cb => { cb.checked = false; });
+        // Prendi l'obiettivo selezionato
+        const obiettivo = form.querySelector('input[name="obiettivo"]:checked');
+        if (!obiettivo) return;
+        const conf = checkboxPerObiettivo[obiettivo.value];
+        if (!conf) return;
+        // Per ogni gruppo, seleziona le checkbox coerenti
+        Object.entries(conf).forEach(([name, values]) => {
+            values.forEach(val => {
+                const selector = `input[name="${name}"][value="${val}"]`;
+                const cb = form.querySelector(selector);
+                if (cb) cb.checked = true;
+            });
+        });
+    }
+
     form.querySelectorAll('input[name="obiettivo"]').forEach(radio => {
-        radio.addEventListener('change', aggiornaListaTecnologieFinale);
+        radio.addEventListener('change', () => {
+            aggiornaListaTecnologieFinale();
+            aggiornaCheckboxObiettivo();
+        });
     });
+    // Inizializza all'avvio
     aggiornaListaTecnologieFinale();
+    aggiornaCheckboxObiettivo();
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
