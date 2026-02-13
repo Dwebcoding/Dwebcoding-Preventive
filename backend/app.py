@@ -31,8 +31,10 @@ if __name__ == '__main__':
 
 
 # Endpoint per accettazione preventivo e invio email
-@app.route('/api/accetta-preventivo', methods=['POST'])
+@app.route('/api/accetta-preventivo', methods=['POST', 'OPTIONS'])
 def accetta_preventivo():
+    if request.method == 'OPTIONS':
+        return ('', 200)
     dati = request.json
 
     email_cliente = dati.get('email')
