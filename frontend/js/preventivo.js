@@ -141,6 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
             tecnologie
         }));
         // Vai alla pagina di riepilogo
-        window.location.href = '/frontend/html/preventivo_riepilogo.html';
+        // Redirect dinamico compatibile con GitHub Pages e locale
+        const base = window.location.pathname.split('/frontend/html/')[0];
+        window.location.href = base + '/frontend/html/preventivo_riepilogo.html';
     });
 });
