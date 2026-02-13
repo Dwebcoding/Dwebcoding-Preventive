@@ -141,8 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
             tecnologie
         }));
         // Vai alla pagina di riepilogo
-        // Redirect dinamico compatibile con GitHub Pages e locale
-        const base = window.location.pathname.split('/frontend/html/')[0];
-        window.location.href = base + '/frontend/html/preventivo_riepilogo.html';
+        // Redirect robusto: calcola la base path del sito (es: /Dwebcoding-Preventive/ oppure /)
+        const pathParts = window.location.pathname.split('/');
+        let basePath = '/';
+        if (pathParts.length > 2 && pathParts[1] !== '') {
+            basePath = '/' + pathParts[1] + '/';
+        }
+        window.location.href = basePath + 'frontend/html/preventivo_riepilogo.html';
     });
 });
