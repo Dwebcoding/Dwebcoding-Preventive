@@ -97,37 +97,39 @@
                 </fieldset>
             </div><br>
 
-            <fieldset>
-                <legend>Integrazioni</legend>
-                <label><input type="checkbox" name="integrazioni" value="pagamenti"> Pagamenti online</label>
-                <label><input type="checkbox" name="integrazioni" value="social"> Social network</label>
-                <label><input type="checkbox" name="integrazioni" value="maps"> Google Maps</label>
-                <label><input type="checkbox" name="integrazioni" value="crm"> CRM</label>
-                <label><input type="checkbox" name="integrazioni" value="altro"> Altro <input type="text" name="integrazioni_altro" placeholder="Specificare"></label>
-            </fieldset><br>
+            <div class="fieldset-flex">
+                <fieldset>
+                    <legend>Integrazioni</legend>
+                    <label><input type="checkbox" name="integrazioni" value="pagamenti"> Pagamenti online</label>
+                    <label><input type="checkbox" name="integrazioni" value="social"> Social network</label>
+                    <label><input type="checkbox" name="integrazioni" value="maps"> Google Maps</label>
+                    <label><input type="checkbox" name="integrazioni" value="crm"> CRM</label>
+                    <label><input type="checkbox" name="integrazioni" value="altro"> Altro <input type="text" name="integrazioni_altro" placeholder="Specificare"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Design e preferenze grafiche</legend>
+                    <label><input type="checkbox" name="design" value="moderno"> Stile moderno</label>
+                    <label><input type="checkbox" name="design" value="classico"> Stile classico</label>
+                    <label><input type="checkbox" name="design" value="colori"> Preferenze colori <input type="text" name="colori_preferiti" placeholder="Es: blu, bianco..."></label>
+                    <label><input type="checkbox" name="design" value="logo"> Ho già un logo</label>
+                    <label><input type="checkbox" name="design" value="altro"> Altro <input type="text" name="design_altro" placeholder="Specificare"></label>
+                </fieldset>
+            </div><br>
 
-            <fieldset>
-                <legend>Design e preferenze grafiche</legend>
-                <label><input type="checkbox" name="design" value="moderno"> Stile moderno</label>
-                <label><input type="checkbox" name="design" value="classico"> Stile classico</label>
-                <label><input type="checkbox" name="design" value="colori"> Preferenze colori <input type="text" name="colori_preferiti" placeholder="Es: blu, bianco..."></label>
-                <label><input type="checkbox" name="design" value="logo"> Ho già un logo</label>
-                <label><input type="checkbox" name="design" value="altro"> Altro <input type="text" name="design_altro" placeholder="Specificare"></label>
-            </fieldset><br>
-
-            <fieldset>
-                <legend>Accessibilità e mobilità</legend>
-                <label><input type="checkbox" name="accessibilita" value="responsive"> Responsive/mobile</label>
-                <label><input type="checkbox" name="accessibilita" value="disabili"> Accessibile per disabili</label>
-                <label><input type="checkbox" name="accessibilita" value="altro"> Altro <input type="text" name="accessibilita_altro" placeholder="Specificare"></label>
-            </fieldset><br>
-
-            <fieldset>
-                <legend>SEO e marketing</legend>
-                <label><input type="checkbox" name="seo" value="ottimizzazione"> Ottimizzazione motori di ricerca</label>
-                <label><input type="checkbox" name="seo" value="analytics"> Google Analytics</label>
-                <label><input type="checkbox" name="seo" value="altro"> Altro <input type="text" name="seo_altro" placeholder="Specificare"></label>
-            </fieldset><br>
+            <div class="fieldset-flex">
+                <fieldset>
+                    <legend>Accessibilità e mobilità</legend>
+                    <label><input type="checkbox" name="accessibilita" value="responsive"> Responsive/mobile</label>
+                    <label><input type="checkbox" name="accessibilita" value="disabili"> Accessibile per disabili</label>
+                    <label><input type="checkbox" name="accessibilita" value="altro"> Altro <input type="text" name="accessibilita_altro" placeholder="Specificare"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>SEO e marketing</legend>
+                    <label><input type="checkbox" name="seo" value="ottimizzazione"> Ottimizzazione motori di ricerca</label>
+                    <label><input type="checkbox" name="seo" value="analytics"> Google Analytics</label>
+                    <label><input type="checkbox" name="seo" value="altro"> Altro <input type="text" name="seo_altro" placeholder="Specificare"></label>
+                </fieldset>
+            </div><br>
 
             <fieldset>
                 <legend>Tempistiche desiderate</legend>
@@ -139,6 +141,74 @@
 
             <fieldset>
                 <legend>Budget indicativo</legend>
+                <div class="budget-table-modern">
+                    <div class="budget-row">
+                        <div class="budget-info">
+                            <div class="budget-title">&lt; 1.000€</div>
+                            <div class="budget-desc">Siti vetrina base, landing page, portfolio semplice</div>
+                        </div>
+                    </div>
+                    <div class="budget-row">
+                        <div class="budget-info">
+                            <div class="budget-title">1.000€ - 3.000€</div>
+                            <div class="budget-desc">Siti vetrina avanzati, blog, pagine multiple, design personalizzato</div>
+                        </div>
+                    </div>
+                    <div class="budget-row">
+                        <div class="budget-info">
+                            <div class="budget-title">3.000€ - 6.000€</div>
+                            <div class="budget-desc">E-commerce, booking, aree riservate, integrazioni avanzate</div>
+                        </div>
+                    </div>
+                    <div class="budget-row">
+                        <div class="budget-info">
+                            <div class="budget-title">&gt; 6.000€</div>
+                            <div class="budget-desc">Progetti complessi, soluzioni su misura, funzionalità custom, multi-lingua</div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                .budget-table-modern {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    margin-bottom: 10px;
+                }
+                .budget-row {
+                    background: #fff;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                    padding: 10px 16px;
+                    margin-bottom: 4px;
+                    transition: box-shadow 0.2s;
+                }
+                .budget-row:hover {
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                }
+                .budget-info {
+                    width: 100%;
+                }
+                .budget-title {
+                    font-weight: 600;
+                    font-size: 1.1em;
+                    color: #2a2a2a;
+                }
+                .budget-desc {
+                    font-size: 0.97em;
+                    color: #555;
+                }
+                @media (max-width: 600px) {
+                    .budget-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        padding: 12px 8px;
+                    }
+                    .budget-icon {
+                        margin-bottom: 8px;
+                        margin-right: 0;
+                    }
+                }
+                </style>
                 <label><input type="radio" name="budget" value="<1000"> &lt; 1.000€</label>
                 <label><input type="radio" name="budget" value="1000-3000"> 1.000€ - 3.000€</label>
                 <label><input type="radio" name="budget" value="3000-6000"> 3.000€ - 6.000€</label>
@@ -153,10 +223,6 @@
                 <label><input type="checkbox" name="assistenza" value="altro"> Altro <input type="text" name="assistenza_altro" placeholder="Specificare"></label>
             </fieldset><br>
 
-            <fieldset>
-                <legend>Note aggiuntive</legend>
-                <textarea name="note_aggiuntive" rows="3" maxlength="350" style="resize:none;width:98%;min-width:220px;max-width:100%;" placeholder="Scrivi qui altre informazioni utili o richieste particolari... (max 350 caratteri)"></textarea>
-            </fieldset><br>
 
             <fieldset>
                 <legend>Pagine extra e richieste particolari</legend>
@@ -166,11 +232,17 @@
                 <label><input type="checkbox" name="pagine_extra" value="altro"> Altro</label><br>
                 <textarea name="dettagli_extra" rows="3" maxlength="350" style="resize:none;width:98%;min-width:320px;max-width:100%;" placeholder="Scrivi qui le tue richieste particolari, pagine extra o funzionalità specifiche... (max 350 caratteri)"></textarea>
             </fieldset><br>
+
             <fieldset>
-                <legend>Modalità preventivo</legend>
-                <label><input type="radio" name="modalita" value="pdf" required> PDF stampabile</label><br>
-                <label><input type="radio" name="modalita" value="digitale"> Preventivo digitale con firma</label>
+                <legend>Note aggiuntive</legend>
+                <textarea name="note_aggiuntive" rows="3" maxlength="350" style="resize:none;width:98%;min-width:220px;max-width:100%;" placeholder="Scrivi qui altre informazioni utili o richieste particolari... (max 350 caratteri)"></textarea>
             </fieldset><br>
+            
+            <legend>Modalità preventivo</legend>
+            <label><input type="radio" name="modalita" value="pdf" required> PDF stampabile</label><br>
+            <label><input type="radio" name="modalita" value="digitale"> Preventivo digitale con firma</label>
+        </fieldset><br>
+
             <button type="submit">Genera Preventivo</button>
    
         </form>
