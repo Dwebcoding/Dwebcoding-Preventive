@@ -242,26 +242,27 @@ h1 {
 
 .dettaglio-servizi-card {
     background: linear-gradient(180deg, rgba(25,195,125,0.92) 0%, rgba(25,195,125,0.92) 50%, rgba(17,17,17,0.92) 100%);
-    border-radius: 18px;
-    box-shadow: 0 8px 32px 0 rgba(25,195,125,0.13), 0 2px 16px #111a;
-    border: 1.5px solid rgba(25,195,125,0.55);
-    padding: 28px 30px 22px 30px;
-    min-width: 220px;
-    flex: 1 1 220px;
-    max-width: 340px;
+    border-radius: 26px;
+    box-shadow: 0 6px 32px 0 rgba(25,195,125,0.18), 0 2px 24px #111a, 0 1.5px 8px #111a;
+    border: 2.5px solid rgba(25,195,125,0.65);
+    padding: 36px 36px 28px 36px;
+    min-width: 240px;
+    flex: 1 1 260px;
+    max-width: 370px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     transition: box-shadow 0.28s cubic-bezier(.4,1.4,.6,1), border-color 0.22s, transform 0.22s cubic-bezier(.4,1.4,.6,1);
     color: #fff;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
     position: relative;
     /* overflow: visible;  Consente alle tendine di uscire */
 }
 .dettaglio-servizi-card:hover {
-    box-shadow: 0 12px 38px 0 rgba(25,195,125,0.22), 0 4px 24px #111a;
-    border-color: #229e6b;
-    transform: translateY(-6px) scale(1.025);
+    box-shadow: 0 18px 48px 0 rgba(25,195,125,0.28), 0 8px 32px #111a;
+    border-color: #1be98a;
+    transform: translateY(-10px) scale(1.035);
+    filter: brightness(1.07);
 }
 .dettaglio-servizi-card .card-icon {
     display: block;
@@ -281,23 +282,27 @@ h1 {
     display: block;
 }
 .dettaglio-servizi-card .card-title {
-    font-weight: 800;
-    font-size: 1.13em;
-    margin-bottom: 6px;
+    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 1.22em;
+    margin-bottom: 8px;
     color: #fff;
-    letter-spacing: 0.01em;
-    text-shadow: 0 2px 8px #111a;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 12px #111a;
 }
 .dettaglio-servizi-card .card-desc {
     color: #eafff2;
-    font-size: 1.04em;
-    margin-bottom: 10px;
+    font-size: 1.08em;
+    margin-bottom: 14px;
     font-weight: 500;
+    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
 }
 .dettaglio-servizi-card .card-price {
-    margin-top: 10px;
-    font-weight: 700;
-    color: #19c37d;
+    margin-top: 14px;
+    font-weight: 800;
+    color: #1be98a;
+    font-size: 1.13em;
+    letter-spacing: 0.01em;
     font-size: 1.13em;
     letter-spacing: 0.01em;
     text-shadow: 0 2px 8px #111a;
